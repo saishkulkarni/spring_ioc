@@ -1,18 +1,19 @@
 package y;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
-//@Lazy
-//@Scope("prototype")
 public class Car {
-//public Car() {
-//	System.out.println("Car object got Created");
-//}
-//
-//@PostConstruct
-//void installEngine() {
-//	System.out.println("Engine Installed");
-//}
+
+	@Autowired
+	@Qualifier("jblMusicSystem")
+	MusicSystem musicSystem;
+
+	@Override
+	public String toString() {
+		return "Car [musicSystem=" + musicSystem + "]";
+	}
 
 }
